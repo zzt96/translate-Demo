@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>在线翻译</h1>
+    <h5>简单 易用 便捷</h5>
+    <translateForm v-on:formSubmit="translate"></translateForm>
+    <translateOutput></translateOutput>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+  import translateForm from './components/translateForm'
+  import translateOutput from './components/translateOutput'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    components: {
+      translateForm,
+      translateOutput
+    },
+    methods: {
+      translate: function (text) {
+        alert(text)
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    text-align: center;
+  }
 </style>
