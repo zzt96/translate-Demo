@@ -23,9 +23,15 @@
         language:""
       }
     },
+    /**
+     * 默认给选择语言一个英语
+     */
     created:function(){
       this.language ="en"
     },
+    /**
+     * formSubmit表单提交绑定的方法，在上面使用v-model双向绑定
+     */
     methods: {
       formSubmit: function (e) {
         this.$emit('formSubmit', this.texttoTranslate,this.language);
